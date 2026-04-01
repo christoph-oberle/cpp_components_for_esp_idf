@@ -37,16 +37,16 @@ extern "C" void app_main(void)
         default : ESP_LOGI(tag, "Wakeup was not caused by deep sleep: %d",wakeupReason); break;
     }
 
-    /* Wi-Fi: Initialize WifiManager class */
-    ESP_LOGI(tag, "WifiManager");
+    /* Wi-Fi: Initialize Wifi class */
+    ESP_LOGI(tag, "WiFi");
     Wifi wifi(
-		std::string("WifiManager"), // tag
+		std::string("wifi-manager"), // tag
 		std::string("ESP32"), // ssid_prefix
 		std::string("de-DE") // language
     );
 
     /* Wi-Fi: Wait until Wi-Fi is connected */
-    ESP_LOGI(tag, "Wifi is %s", wifi.IsConnected() ? "connected" : "not connected");
+    ESP_LOGI(tag, "Wi-Fi is %s", wifi.IsConnected() ? "connected" : "not connected");
 
     /* Wi-Fi: Retrieve connection information */
     ESP_LOGI(tag, "Ssid: %s", wifi.GetSsid().c_str());
